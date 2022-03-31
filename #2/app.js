@@ -83,6 +83,10 @@ if(isNaN(inputAge)){
     alert("Please write a number");
 } else if (inputAge < 18){
     alert("Thanks");
+    console.log("123")
 } else {
-    
+    // 불라 불라 불라
 }
+// JS 실습 - 예제? 난이도 거의 끝
+
+// 앱 만들기 시작!! 
