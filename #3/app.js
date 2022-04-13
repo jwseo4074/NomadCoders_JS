@@ -36,7 +36,7 @@ Js로 HTML에 있는 정보를 가지고 올 수 있는 방법은?
 */
 
 
-const title = document.getElementById("title")
+// const title = document.getElementById("title")
 // console.log(title);
 // console.log 대신에 element 를 좀 더 자세하게 보여주는
 // console.dir 를 써보자
@@ -141,14 +141,14 @@ const title = document.getElementById("title")
 // title을 한번 클릭하면 토마토로 색깔 바뀌고
 // 다시 한번 더 누르면 파란새으로 바뀌게 하고 싶음   ==> 토글
 
-const title_change = document.querySelector(".hello:first-child h1")
+// const title_change = document.querySelector(".hello:first-child h1")
 // console.log("title_change =>  ",title_change);
 
 // title_change.style.color = "blue";
 // // h1의 style을 js에서 변경할 수 있다는 사실이 중요
 // // js 에서 발생하는 event를 여기서 listen 하는게 중요
 
-function handleTitleClick(){
+// function handleTitleClick(){
     // console.log("title_change.style.color => " , title_change.style.color);
     // // 이걸 getter 라고 함
     // title_change.style.color="red";
@@ -219,24 +219,51 @@ function handleTitleClick(){
     // if(title_change.classList.contains(clickedClass)){
     //     title_change.classList.remove(clickedClass);
     // }
-    // else {
-    //     title_change.classList.add(clickedClass);
-    // }
-    // 이렇게하면 sexy-font는 그대로 내두고? active 만 생겼다 없어졌다 한다.
-    // 개발자들이 항상 하는 일이고, 이걸 편리하게 해줄 함수가 있다.
-    // => toggle function
-    // 기본적으로 toggle function은 바로 위 코드를 구현해놓은 것이다.
 
-    const clickedClass = "active";
-    title_change.classList.toggle(clickedClass);
-    // title_change의 classList에 clickedClass가 없으면 추가
-    // 있으면? 제거
-    // 졸라 좋다. 졸라 편하다.
+    // << Element.classList >> 
 
-    // 결론 앞에 내용들을 다 이해하고, 사용은 toggle을 쓰기!!
-    // toggle 정의 = toggles token, removing it
-    // if it is present and adding if it is not
+    // Element.classList는 엘리먼트의 클래스 속성의 컬렉션인 활성 
+    // DOMTokenList를 반환하는 읽기 전용 프로퍼티이다.
 
-    // 이제 application 만들기 시작하자!!!!!!!!!!
-}
-title_change.addEventListener("click", handleTitleClick);
+
+    // classList 사용은 공백으로 구분된 문자열인 
+    // element.className을 통해 엘리먼트의 클래스 목록에 
+    // 접근하는 방식을 대체하는 간편한 방법이다.
+
+    // Element.classList는 엘리먼트의 클래스 속성의 컬렉션인 활성
+    // DomTokenList 를 반환하는 읽기 전용 프로퍼티이다.
+
+    // DOMTokenList란?
+    // 인터페이스는 DOMTokenList 공백으로 구분된 토큰 집합을 나타냅니다. 
+    // 이러한 집합은 Element.classList, 
+    // HTMLLinkElement.relList (en-US) , 
+    // HTMLAnchorElement.relList (en-US) , 
+    // HTMLAreaElement.relList (en-US) , 
+    // HTMLIframeElement.sandbox또는 에서 반환됩니다. 
+    // HTMLOutputElement.htmlFor. 0JavaScript Array개체 에서와 
+    // 같이 시작하여 인덱싱 됩니다. DOMTokenList항상 대소문자를 구분합니다.
+
+    // DOM은 "HTML 문서의 계층적 구조"와 정보를 표현하며 이를 제어할 수 있는 API 
+    // 즉, 프로퍼티와 메서드를 제공하는 트리 자료구조이다.
+
+//     else {
+//         title_change.classList.add(clickedClass);
+//     }
+//     이렇게하면 sexy-font는 그대로 내두고? active 만 생겼다 없어졌다 한다.
+//     개발자들이 항상 하는 일이고, 이걸 편리하게 해줄 함수가 있다.
+//     => toggle function
+//     기본적으로 toggle function은 바로 위 코드를 구현해놓은 것이다.
+
+//     const clickedClass = "active";
+//     title_change.classList.toggle(clickedClass);
+//     title_change의 classList에 clickedClass가 없으면 추가
+//     있으면? 제거
+//     졸라 좋다. 졸라 편하다.
+
+//     결론 앞에 내용들을 다 이해하고, 사용은 toggle을 쓰기!!
+//     toggle 정의 = toggles token, removing it
+//     if it is present and adding if it is not
+
+//     이제 application 만들기 시작하자!!!!!!!!!!
+// }
+// title_change.addEventListener("click", handleTitleClick);

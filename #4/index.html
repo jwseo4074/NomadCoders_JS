@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width", initial-scale="1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>#4</title>
+    </head>
+</html>
+
+<body>
+    <form id="login-form">
+        <!-- div 대신에 form을 넣으면? html 상에서 자동으로 입력 데이터 체크를 해줌 -->
+        <!-- 제출 버튼을 누르면 페이지가 새로고침 되는데, 이는 form을 submit 하기 때문이다 -->
+        <!-- 엔터를 누르면 자동으로 submit 되는데 그럼 값 입력 해줄 때 마다 새로고침 해야하나? 어떻게 고치나 -->
+        <input 
+            required 
+            maxlength = "15" 
+            type="text" 
+            placeholder="what is your name?"
+        />
+        <button>Log in</button>
+    </form>
+    
+    <script src="app.js"></script>
+</body>
