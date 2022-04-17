@@ -267,3 +267,7 @@ Js로 HTML에 있는 정보를 가지고 올 수 있는 방법은?
 //     이제 application 만들기 시작하자!!!!!!!!!!
 // }
 // title_change.addEventListener("click", handleTitleClick);
+
+
+console.log(0 == false); // true
+console.log(null === undefined); // false
