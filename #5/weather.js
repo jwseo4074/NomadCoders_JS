@@ -1,6 +1,5 @@
 const API_KEY  = "9b9260a87f691a3520d48b73e6542aa8";
 
-
 function onGeoOk(position) {
     console.log(position)
     const lat = position.coords.latitude; 
@@ -13,11 +12,14 @@ function onGeoOk(position) {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        const weather = document.querySelector("#weather span:first-child");
-        const city = document.querySelector("#weather span:last-child");
+        const temp = document.querySelector("#temp_box");
+        const weather = document.querySelector("#weather_box");
+        const city = document.querySelector("#city_box");
+        // span은 되는데 div는 안되는 이유가 도대체 뭐임 씨발
 
-        city.innerText = data.name;
-        weather.innerText =  `${data.weather[0].main} / ${data.main.temp}`;
+        temp.innerText = `${data.main.temp}`;
+        city.innerText = `${data.name}`;
+        weather.innerText =  `${data.weather[0].main}`;
     });
 }
 
@@ -30,7 +32,6 @@ function onGeoOk(position) {
 // fetch는 promise 이다. 당장 뭔가 일어낮 ㅣ않고 시간이 좀 걸린 뒤에 일어난다
 // 서버에 뭔가를 물어봤는데(요청), 서버가 응답하는데 5분 걸렸아 그럼 5분 동안 서버의 응답을 기다려야해
 // 그래서 쓰는게 then 이다. response를 받이와야 한다 => JSON 파일
-
 
 function onGeoError() {
     alert("Can't find you");

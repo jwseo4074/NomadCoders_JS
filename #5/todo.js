@@ -23,9 +23,7 @@ function saveToDos(){
 
     // 이렇게 넣으면 key : todos, value : a,b,c,d => 텍스트 형태로 저장됨
     // 그럼 어떻게 해줘야 할까?
-    // console.dir(localStorage.Item("todos"));
-    
-    
+    // console.dir(localStorage.Item("todos"));    
 }
 
 function deleteToDo(event) {
@@ -48,9 +46,6 @@ function deleteToDo(event) {
     // 안에 내용이 같으면 지울 수가 없잖아
     console.log(toDos);
     saveToDos();
-
-
-
 }
 
 function paintToDo(newTodo) {
@@ -103,7 +98,7 @@ function sayHello(item) {
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(savedToDos !== null) {
-    const parsedToDos = JSON.parse(savedToDos);
+    const parsedToDos = JSON.parse(savedToDos);``
     // parsedToDos.forEach(sayHello);
 
     toDos = parsedToDos;
@@ -115,6 +110,4 @@ if(savedToDos !== null) {
     // parsedToDos.forEach(sayHello);  이거랑
     // parsedToDos.forEach((items) => console.log(`this is turn of ${item})); 이랑
     // 똑같다
-
-
 }
