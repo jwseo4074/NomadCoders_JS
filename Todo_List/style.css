@@ -6,16 +6,74 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+}
+body, html {
+    margin : 0px;
+    padding: 0px;
     background-color: black;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+}
+.login_box {
+    display: flex;
+    flex-direction: row;
+    padding-top: 200px;
+}
+#input_text{
+    width: 200px;
+    height: 40px;
+    color: black;
+    background-color: darkgrey;
+    cursor: pointer;
+    margin-right: 20px;
+}
+#input_btn {
+    width: 60px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
 }
 .content_box {
-    border: red 5px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#clock {
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+}
+#todo-list{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 25px;
+    list-style: none;
 }
 
-.login_box {
-    border: blue 5px solid;
+#todo-list li{
+    width : 150px;
+    border-bottom: 3px solid white;
+    margin: 10px;
+    padding: 0px 5px 6px 0px;
+}
+#todo-list li::before{
+    content: ">  ";
+    vertical-align: middle;
+}
+#todo-list button {
+    float: right;
+}
+
+#todo-form input{
+    width: 200px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    /* margin-right: 20px; */
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
 }
