@@ -10,30 +10,41 @@
 </html>
 
 <body>
-    <div class="main_form">
-        <form class="login_box hidden" id="login-form">
-            <input id="input_text" required maxlength = "15" type="text" placeholder="what is your name?" />
-            <button id="input_btn">Log in</button>
-        </form>
-        <div class="content_box">
+    <div id="main_form">
+        <div id="main_form_up_box">
             <h2 id ="clock"></h2>
-            <h1 id="greeting"></h1>
-            <form id="todo-form">
-                <input type="text" placeholder="Write a To Do and Press Enter" />
+            <h1 id="greeting" class="hidden"></h1>
+            <!-- 처음애는 로그인 폼이랑 greeting은 hidden 상태  = 안보여-->
+            <form id="login_form" class="hidden">
+                <input id="input_text" required maxlength = "15" type="text" placeholder="What is  name?" />
+                <button id="input_btn">Log in</button>
             </form>
-            <ul id="todo-list">
+        </div>
 
-            </ul>
-            <div id="quote">
-                <div></div>
-                <div></div>
+        <div id="main_form_bottom_box">
+            <div id="bottom_box_left_box">
+                <form id="todo_form">
+                    <input id="todo_form_input" type="text" placeholder="Write a Todo here" />
+                </form>
+                <div id="weather">
+                    <div id="city_box"></div>
+                    <div id="temp_box"></div>
+                    <div id="weather_box"></div>
                 </div>
-            <div id="weather">
-                <div id="temp_box"></div>
-                <div id="weather_box"></div>
-                <div id="city_box"></div>
+            </div>
+            <div id="bottom_box_right_box">
+                <ul id="todo_list">
+                </ul>
             </div>
         </div>
+
+        <div id="quote">
+            <div></div>
+            <div></div>
+        </div>
+
+
+        
         
         <script src="greetings.js"></script>
         <script src="clock.js"></script>

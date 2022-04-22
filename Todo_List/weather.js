@@ -16,9 +16,9 @@ function onGeoOk(position) {
         const weather = document.querySelector("#weather_box");
         const city = document.querySelector("#city_box");
 
-        temp.innerText = `${data.main.temp}`;
-        city.innerText = `${data.name}`;
-        weather.innerText =  `${data.weather[0].main}`;
+        temp.innerText = `Temperature : ${data.main.temp} 'C`;
+        city.innerText = `Location : ${data.name}`;
+        weather.innerText =  `Weather : ${data.weather[0].main}`;
     });
 }
 

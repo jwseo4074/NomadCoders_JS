@@ -1,6 +1,6 @@
-const todoForm = document.querySelector("#todo-form");
-const todoList = document.querySelector("#todo-list");
-const todoInput = document.querySelector("#todo-form input");
+const todoForm = document.querySelector("#todo_form");
+const todoList = document.querySelector("#todo_list");
+const todoInput = document.querySelector("#todo_form input");
 
 const TODOS_KEY = "todos";
 
@@ -49,7 +49,7 @@ function deleteToDo(event) {
 }
 
 function paintToDo(newTodo) {
-    // toDo 를 그리는 역할을 하는 함수
+    // toDo 를 그리는 역할을 하는 함수    
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
