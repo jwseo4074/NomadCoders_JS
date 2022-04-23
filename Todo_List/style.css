@@ -83,7 +83,7 @@ body, html {
     /* align-items: center; */
 }
 #bottom_box_left_box {
-    border : blue solid 5px;
+    /* border : blue solid 5px; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -111,20 +111,23 @@ body, html {
     flex-direction: column;
     width: 200px; 
     /* height : 100px; */
-    border: red solid 1px;
+    /* border: red solid 1px; */
     font-weight: bold;
     color: white;
     text-align: center;
+    padding-top: 10px;
 }
 #bottom_box_right_box{
-    border: 5px solid blue;
+    /* border: 5px solid blue; */
 }
 #todo_list{
     display: flex;
     flex-direction: column;
     color: white;
-    font-size: 17px;
-
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
     list-style: none;
 }
 #todo_list li{
@@ -134,20 +137,37 @@ body, html {
     border-bottom: 3px solid white;
 }
 #todo_list li::before{
-    content: ">  ";
-    /* vertical-align: middle; */
+    content: "> ";
+    vertical-align: middle;
 }
 #todo_list button {
     float: right;
-    /* margin-bottom: 5px; */
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-style: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
 }
 
 /* ########################################### */
 
 #quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#quote div:first-child {
+    color: rgb(224, 224, 224);
+    font-size: larger;
     /* width: 300px; */
     /* height: 100px; */
-    border: red solid 10px;
+    /* border: red solid 10px; */
     /* background-color: gray; */
     /* color: black; */
+}
+#quote div:last-child {
+    color: rgb(185, 185, 185);
+    font-size: medium;
 }
