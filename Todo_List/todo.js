@@ -1,8 +1,19 @@
 const todoForm = document.querySelector("#todo_form");
-const todoList = document.querySelector("#todo_list");
+const todoList = document.querySelector(".todo_list");
+const todoBox = document.querySelector(".todo_box");
 const todoInput = document.querySelector("#todo_form input");
-
+const bottomBox = document.querySelector("#bottom_box_right_box")
 const TODOS_KEY = "todos";
+
+
+const todoBox1 = document.querySelector("#todo_box1");
+const todoBox2 = document.querySelector("#todo_box2");
+const todoList1 = document.querySelector("#todo_list1");
+const todoList2 = document.querySelector("#todo_list2");
+
+// const HIDDEN_CLASSNAME = "hidden"
+// const todoUlBox = document.querySelector(".todo_list")
+// const todoDivBox = document.querySelector(".todo_box")
 
 // const toDos = [];
 // 웹이 새로 로드되면 배열 비어있는 상태로 시작함
@@ -39,7 +50,7 @@ function deleteToDo(event) {
     li.remove();
     // remove 함수는 선택한 요소를 제거할 때 사용하거나, 요소 내의 태그들을 삭제할 때 사용합니다. 
     
-    console.log(toDos);
+    // console.log(toDos);
 
     toDos = toDos.filter(todo => todo.id !== parseInt(li.id));
     // localStorage.removeItem(li); 뭐 이런식으로 해주고 싶은데
@@ -49,9 +60,28 @@ function deleteToDo(event) {
 }
 
 function paintToDo(newTodo) {
-    // toDo 를 그리는 역할을 하는 함수    
+     // toDo 를 그리는 역할을 하는 함수   
+    
+    todoListCount = toDos.length;
+    if(todoListCount < 5) {
+        todoBox2.classList.add("hidden")
+    }
+    else {
+        todoBox2.classList.remove("hidden")
+    }
+    // const div = document.createElement("div");
+    // div.id = `todo_box${todoBoxCount}`;
+    // div.classList.add("todo_box")
+
+    // const ul = document.createElement("ul");
+    // ul.classList.add("todo_list");
+    // ul.id = `todo_list${todoBoxCount}`;
+    // // ul 만들기
+
+    console.log(123)
     const li = document.createElement("li");
     li.id = newTodo.id;
+
     const span = document.createElement("span");
     span.innerText = newTodo.text;
 
@@ -62,8 +92,22 @@ function paintToDo(newTodo) {
 
     li.appendChild(span);
     li.appendChild(button);
-    todoList.appendChild(li);
-    // li에 append는 무조건 젤 마지막!
+
+    if(todoListCount > 0 && todoListCount < 5) {
+        todoList1.appendChild(li);
+    }
+    else if( todoListCount > 4 && todoListCount < 9 ){
+        todoList2.appendChild(li);
+    }
+    else {
+        alert("해야할 일이 너무 많습니다\n 다 지우고 다시 계획을 짜보세요!")
+        const username = localStorage.getItem("username");
+        localStorage.clear();
+        location.reload()   
+        localStorage["username"] = username;
+        toDos.length = 0;
+        // 새로 submit
+    }  
 }
 function handleToDoSubmit(event) {
     event.preventDefault();
@@ -83,18 +127,11 @@ function handleToDoSubmit(event) {
     toDos.push(newToDoObj);
     // 값 가져오면 배열에 일단 저장, 이걸 로컬 스토리지에 저장하고 싶어
     // 근데 로컬 스토리지에는 텍스트만 저장 가능해
-
     paintToDo(newToDoObj);
-    saveToDos();
+    saveToDos();  
 }
-
 todoForm.addEventListener("submit", handleToDoSubmit);
 
-function sayHello(item) {
-    console.log(`this is turn of ${item}`);
-    // 이벤트 발생 했을 때 자동으로 event 인자로 넘겨주듯이
-    // 함수에서 item 자동으로 쓸 수 있음
-}
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(savedToDos !== null) {
