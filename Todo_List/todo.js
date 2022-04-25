@@ -129,13 +129,14 @@ function handleToDoSubmit(event) {
     // 근데 로컬 스토리지에는 텍스트만 저장 가능해
     paintToDo(newToDoObj);
     saveToDos();  
+    
 }
 todoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(savedToDos !== null) {
-    const parsedToDos = JSON.parse(savedToDos);``
+    const parsedToDos = JSON.parse(savedToDos);
     // parsedToDos.forEach(sayHello);
 
     toDos = parsedToDos;
