@@ -1,3 +1,5 @@
-# Vanila JS
+# todoList using Vanila JS
 
-Vanila JS를 이용한 TodoList
++ 그 외 공부했던 자료들 모음 (JS_Practice)
+
+결과물 : https://zwon2056.github.io/todoList-Vanila-JS
