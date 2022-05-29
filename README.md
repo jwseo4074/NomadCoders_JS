@@ -1,2 +1,3 @@
-# NomadCoders_JS
-노마드코더 Vanila JS
+# Vanila JS
+
+Vanila JS를 이용한 TodoList
